@@ -65,7 +65,7 @@ If you are requesting multiple relationship entities, you can also pass in an op
 A reserved `_setting` key is used to specify any additional settings to the endpoint. Currently, only 3 settings are available: `identifiable`, `paginate`, and `auth`.
 
 ### Identifiable
-The identifiable option will determine what column name is used to identify specific entries. The default value for the `identifiable` setting is `id`, meaning a GET call to `/api/fake/categories/1` will check against the `id` field. In the above example, users are identified by their slug, so you will need to access them using something like `/api/fake/users/user-slug-here`.
+The identifiable option will determine what column name is used to identify specific entries. The default value for the `identifiable` setting is `id`, meaning a GET call to `/api/fake/categories/1` will check against the `id` field. In the above example, posts are identified by their slug, so you will need to access them using something like `/api/fake/posts/post-slug-here`.
 
 ### Paginate
 Straightforward here. If you are expecting multiple results, you can paginate the response by enabling the `paginate` option (which is by default `false`), and specify the amount of entries you want per page (so `5` in the example).
