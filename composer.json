@@ -1,0 +1,30 @@
+{
+    "name": "andyabih/laravel-fake-api",
+    "description": "Generate dummy API endpoints from a simple PHP array. No more waiting for the backend to be done before working on the frontend.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andy Abi Haidar",
+            "email": "andy@yllw.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Andyabih\\LaravelFakeApi\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Andyabih\\LaravelFakeApi\\LaravelFakeApiServiceProvider"
+            ],
+            "aliases": {
+                "LaravelFakeApi": "Andyabih\\LaravelFakeApi\\Facades\\LaravelFakeApi"
+            }
+        }
+    }
+}
