@@ -86,6 +86,9 @@ Same logic as `_without`, but this time you specify which columns you want to in
 ## _no_relationships
 You can specify that you want to ignore all embedded relationships with the `_no_relationships` parameter. `/api/fake/posts?_no_relationships=1` will not return the `category` entity inside the response.
 
+## Column name
+You can also pass in a column name with a value to filter by value. `/api/fake/posts?slug=slug-1` will only return entries where the `slug` field is equal to `slug-1`. Also works with relationships, so you can do something like `/api/fake/posts?categories__id=1`, the format for this is `entityName__fieldName`.
+
 # Preset responses
 LFA checks for a `laravel-fake-api.json` file in the root of your Laravel project. If available, LFA will combine both the randomized dummy data & the preset responses in your JSON file.
 
