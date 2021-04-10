@@ -33,5 +33,11 @@ class LaravelFakeApiServiceProvider extends ServiceProvider {
         Route::group(['middleware' => 'api', 'prefix' => config('laravel-fake-api.base_endpoint')], function() {
             $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
         });
+        
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/laravel-fake-api.php' => config_path('laravel-fake-api.php'),
+            ], 'config');
+        }
     }
 }
