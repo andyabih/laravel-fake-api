@@ -7,6 +7,7 @@ use Faker\Factory as Faker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+// TODO: Add the option of passing faker an array or boolean
 class LaravelFakeApi {
     /**
      * Faker factory instance.
@@ -343,10 +344,14 @@ class LaravelFakeApi {
      * @return array
      */
     protected function getPresetResponses() {
-        return json_decode(
-            file_get_contents(base_path() . '/laravel-fake-api.json'),
-            true
-        );
+        if(file_exists(base_path() . '/laravel-fake-api.json')) {
+            return json_decode(
+                file_get_contents(base_path() . '/laravel-fake-api.json'),
+                true
+            );
+        }
+
+        return [];
     }
 
     /**

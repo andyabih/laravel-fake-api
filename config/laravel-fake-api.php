@@ -1,3 +1,4 @@
+
 <?php
 
 return [
@@ -13,7 +14,8 @@ return [
             
             'id'       => 'random_digit_not_null',
             'title'    => 'word',
-            'text'     => 'paragraph',
+            'slug'     => 'word',
+            'text'     => 'paragraph|2',
             'category' => '_categories'
         ],
 
